@@ -11,3 +11,9 @@
 
 # UserSchema is created under models in User.js
 - All the models starts with Capital letters
+
+# Registration request(Post) to api/users
+- make sure to initialize middleware in server.js to console.log req.body
+
+# Initialize Middleware
+- app.use(express.json({ extended: false}));
