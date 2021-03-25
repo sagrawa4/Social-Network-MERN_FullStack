@@ -43,3 +43,8 @@
 -if yes, check if it is valid token, if not 401 is generted
 -if a valid token, can be checked using jwt.verify(token, config.get('jwtSecret));
 - set the req.user as decoded.user
+
+# Authenticating user token
+- when a user make a get reg at /api/auth with token,
+- routes auth api is called.
+- it findById(req.user.id) and returns the res with user info
