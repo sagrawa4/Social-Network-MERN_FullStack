@@ -2,7 +2,9 @@ const express = require('express');
 const router = express.Router();
 const gravatar= require('gravatar');
 const bcrypt = require('bcryptjs');
-const { check, validationResult} = require('express-validator')
+const jwt = require('jsonwebtoken');
+const { check, validationResult} = require('express-validator');
+const config= require('config');
 
 const User = require('../../../models/User');
 
@@ -57,7 +59,21 @@ async (req,res) => {
     await user.save();
 
     //Return json web token : to get loggen right way from frontend
-    res.send("User registerd");
+    
+    const payload = {
+        user: {
+            id: user.id
+        }
+    }
+
+    jwt.sign(
+        payload, 
+        config.get('jwtSecret'),
+        { expiresIn: 360000},
+        (err, token) => {
+            if(err) throw err;
+            res.json({token}); //returns a token when the user is loggend for first time
+        });
 
     }catch(err){
         console.error(err.message);
