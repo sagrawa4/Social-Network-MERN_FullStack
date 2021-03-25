@@ -34,3 +34,12 @@
 - import the config
 - Create a payload that takes in the user id
 - Use jwt.sign(), to generate a token
+
+# Sending the token back to authenticate an access protected route
+- Create a custom Middleware - file name auth.js
+- Middle ware is a function with three paras(req,res,next)
+- we first check if the token is present or not in the req.header
+-if not, 401 generated
+-if yes, check if it is valid token, if not 401 is generted
+-if a valid token, can be checked using jwt.verify(token, config.get('jwtSecret));
+- set the req.user as decoded.user
