@@ -48,3 +48,26 @@
 - when a user make a get reg at /api/auth with token,
 - routes auth api is called.
 - it findById(req.user.id) and returns the res with user info
+
+# To Register user
+- Make posts request to api/users.. Registering the user, with name,email and password
+- token is recived
+
+# Creating a Middleware to verify the JWT
+- auth middleware is created and the token is verfied.
+
+# Use the auth middleware in auth api 
+- making a Get req to api/auth without token returns no token error.
+- now making a Get req to api/auth with valid token will return the user data from User model except password.
+
+# Next to login the user.
+- in api/auth, make a post request with username and password. 
+- Use bcrypt to check the password validation.
+- if incorrect, 404 error else return token.
+
+# Get current users profile
+- get req to api/profile/me
+- check if the profile exists, if no generate 500 
+
+# Post or generate profile for a user
+-
