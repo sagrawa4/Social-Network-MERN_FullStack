@@ -71,3 +71,7 @@
 
 # Post or generate profile for a user
 -
+
+
+# Adding POSTs 
+- Create a Post Model(create a Schema)
