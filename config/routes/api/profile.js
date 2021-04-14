@@ -108,7 +108,7 @@ router.post('/',
 
 //@router  Get api/profile
 //@desc     get all profiles
-//@acess    Public
+//@access    Public
 
 router.get('/', async(req, res)=> {
     try {
