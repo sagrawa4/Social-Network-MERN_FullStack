@@ -75,3 +75,5 @@
 
 # Adding POSTs 
 - Create a Post Model(create a Schema)
+
+# Create a route to add post
