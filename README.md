@@ -1,5 +1,5 @@
 # To RUN
-- npm run server
+- npm run dev
 
 # To establish mongodb connection
 - All db connection details is in db.js
